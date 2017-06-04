@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbNewModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\DBNEW.MDF.dbo.tblAreaCost' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblAreaCost">
+          <Key>
+            <PropertyRef Name="AreatCostID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="AreatCostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="MaterialID" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="TotalLenght" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="TotalWidth" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="TotalCost" Type="money" />
+          <Property Name="PricePerMeterSQ" Type="money" />
+          <Property Name="TotalArea" Type="decimal" Precision="9" Scale="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\DBNEW.MDF.dbo.tblBussinessCost' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblBussinessCost">
+          <Key>
+            <PropertyRef Name="BussinessCostID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="BussinessCostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="MaterialID" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="CostName" Type="text" />
+          <Property Name="RatePerHour" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\DBNEW.MDF.dbo.tblConsumables' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblConsumables">
+          <Key>
+            <PropertyRef Name="ConsumableID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="ConsumableID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="MaterialID" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="TotalAmount" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="TotalCost" Type="money" />
+          <Property Name="PricePerUnit" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\DBNEW.MDF.dbo.tblLengthCost' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblLengthCost">
+          <Key>
+            <PropertyRef Name="LenghtCostID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="LenghtCostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="MaterialID" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="NoPieces" Type="decimal" Precision="9" Scale="0" />
+          <Property Name="LengthPerPiece" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="TotalLength" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="TotalCostPieces" Type="money" />
+          <Property Name="PricePerMeter" Type="money" />
+        </EntityType>
+        <EntityType Name="tblMaterial">
+          <Key>
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="MaterialID" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="Name" Type="text" Nullable="false" />
+          <Property Name="Description" Type="text" />
+          <Property Name="TypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="tblMaterialType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeasureType" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\DOCUMENTS\VISUAL STUDIO 2017\PROJECTS\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\NEWAGEFRAMEWORK\DBNEW.MDF.dbo.tblVolumeCost' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblVolumeCost">
+          <Key>
+            <PropertyRef Name="VolumeCostID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="VolumeCostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="MaterialID" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="TotalVolume" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="PricePerLiter" Type="money" />
+          <Property Name="TotalCost" Type="money" />
+        </EntityType>
+        <Association Name="FK_tblAreaCost_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblAreaCost" Type="Self.tblAreaCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblAreaCost">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAreaCost_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblAreaCost" Type="Self.tblAreaCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblAreaCost">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblBussinessCost_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblBussinessCost" Type="Self.tblBussinessCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblBussinessCost">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblBussinessCost_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblBussinessCost" Type="Self.tblBussinessCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblBussinessCost">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConsumables_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblConsumables" Type="Self.tblConsumables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblConsumables">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConsumables_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblConsumables" Type="Self.tblConsumables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblConsumables">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLengthCost_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblLengthCost" Type="Self.tblLengthCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblLengthCost">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLengthCost_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblLengthCost" Type="Self.tblLengthCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblLengthCost">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMaterial_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="0..1" />
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblMaterial">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVolumeCost_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblVolumeCost" Type="Self.tblVolumeCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblVolumeCost">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVolumeCost_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblVolumeCost" Type="Self.tblVolumeCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblVolumeCost">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbNewModelStoreContainer">
+          <EntitySet Name="tblMaterial" EntityType="Self.tblMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMaterialType" EntityType="Self.tblMaterialType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAreaCost" EntityType="Self.tblAreaCost" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblAreaCost].[AreatCostID] AS [AreatCostID], 
+    [tblAreaCost].[TypeID] AS [TypeID], 
+    [tblAreaCost].[MaterialID] AS [MaterialID], 
+    [tblAreaCost].[TotalLenght] AS [TotalLenght], 
+    [tblAreaCost].[TotalWidth] AS [TotalWidth], 
+    [tblAreaCost].[TotalCost] AS [TotalCost], 
+    [tblAreaCost].[PricePerMeterSQ] AS [PricePerMeterSQ], 
+    [tblAreaCost].[TotalArea] AS [TotalArea]
+    FROM [dbo].[tblAreaCost] AS [tblAreaCost]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblBussinessCost" EntityType="Self.tblBussinessCost" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblBussinessCost].[BussinessCostID] AS [BussinessCostID], 
+    [tblBussinessCost].[TypeID] AS [TypeID], 
+    [tblBussinessCost].[MaterialID] AS [MaterialID], 
+    [tblBussinessCost].[CostName] AS [CostName], 
+    [tblBussinessCost].[RatePerHour] AS [RatePerHour]
+    FROM [dbo].[tblBussinessCost] AS [tblBussinessCost]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblConsumables" EntityType="Self.tblConsumables" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblConsumables].[ConsumableID] AS [ConsumableID], 
+    [tblConsumables].[TypeID] AS [TypeID], 
+    [tblConsumables].[MaterialID] AS [MaterialID], 
+    [tblConsumables].[TotalAmount] AS [TotalAmount], 
+    [tblConsumables].[TotalCost] AS [TotalCost], 
+    [tblConsumables].[PricePerUnit] AS [PricePerUnit]
+    FROM [dbo].[tblConsumables] AS [tblConsumables]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblLengthCost" EntityType="Self.tblLengthCost" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblLengthCost].[LenghtCostID] AS [LenghtCostID], 
+    [tblLengthCost].[TypeID] AS [TypeID], 
+    [tblLengthCost].[MaterialID] AS [MaterialID], 
+    [tblLengthCost].[NoPieces] AS [NoPieces], 
+    [tblLengthCost].[LengthPerPiece] AS [LengthPerPiece], 
+    [tblLengthCost].[TotalLength] AS [TotalLength], 
+    [tblLengthCost].[TotalCostPieces] AS [TotalCostPieces], 
+    [tblLengthCost].[PricePerMeter] AS [PricePerMeter]
+    FROM [dbo].[tblLengthCost] AS [tblLengthCost]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblVolumeCost" EntityType="Self.tblVolumeCost" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblVolumeCost].[VolumeCostID] AS [VolumeCostID], 
+    [tblVolumeCost].[TypeID] AS [TypeID], 
+    [tblVolumeCost].[MaterialID] AS [MaterialID], 
+    [tblVolumeCost].[TotalVolume] AS [TotalVolume], 
+    [tblVolumeCost].[PricePerLiter] AS [PricePerLiter], 
+    [tblVolumeCost].[TotalCost] AS [TotalCost]
+    FROM [dbo].[tblVolumeCost] AS [tblVolumeCost]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_tblAreaCost_tblMaterial" Association="Self.FK_tblAreaCost_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterial" />
+            <End Role="tblAreaCost" EntitySet="tblAreaCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAreaCost_tblMaterialType" Association="Self.FK_tblAreaCost_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialType" />
+            <End Role="tblAreaCost" EntitySet="tblAreaCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblBussinessCost_tblMaterial" Association="Self.FK_tblBussinessCost_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterial" />
+            <End Role="tblBussinessCost" EntitySet="tblBussinessCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblBussinessCost_tblMaterialType" Association="Self.FK_tblBussinessCost_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialType" />
+            <End Role="tblBussinessCost" EntitySet="tblBussinessCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConsumables_tblMaterial" Association="Self.FK_tblConsumables_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterial" />
+            <End Role="tblConsumables" EntitySet="tblConsumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConsumables_tblMaterialType" Association="Self.FK_tblConsumables_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialType" />
+            <End Role="tblConsumables" EntitySet="tblConsumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLengthCost_tblMaterial" Association="Self.FK_tblLengthCost_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterial" />
+            <End Role="tblLengthCost" EntitySet="tblLengthCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLengthCost_tblMaterialType" Association="Self.FK_tblLengthCost_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialType" />
+            <End Role="tblLengthCost" EntitySet="tblLengthCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMaterial_tblMaterialType" Association="Self.FK_tblMaterial_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialType" />
+            <End Role="tblMaterial" EntitySet="tblMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVolumeCost_tblMaterial" Association="Self.FK_tblVolumeCost_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterial" />
+            <End Role="tblVolumeCost" EntitySet="tblVolumeCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVolumeCost_tblMaterialType" Association="Self.FK_tblVolumeCost_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialType" />
+            <End Role="tblVolumeCost" EntitySet="tblVolumeCost" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbNewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblMaterial">
+          <Key>
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="MaterialID" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TypeID" Type="Int32" />
+          <NavigationProperty Name="tblAreaCosts" Relationship="Self.FK_tblAreaCost_tblMaterial" FromRole="tblMaterial" ToRole="tblAreaCost" />
+          <NavigationProperty Name="tblBussinessCosts" Relationship="Self.FK_tblBussinessCost_tblMaterial" FromRole="tblMaterial" ToRole="tblBussinessCost" />
+          <NavigationProperty Name="tblConsumables" Relationship="Self.FK_tblConsumables_tblMaterial" FromRole="tblMaterial" ToRole="tblConsumables" />
+          <NavigationProperty Name="tblLengthCosts" Relationship="Self.FK_tblLengthCost_tblMaterial" FromRole="tblMaterial" ToRole="tblLengthCost" />
+          <NavigationProperty Name="tblMaterialType" Relationship="Self.FK_tblMaterial_tblMaterialType" FromRole="tblMaterial" ToRole="tblMaterialType" />
+          <NavigationProperty Name="tblVolumeCosts" Relationship="Self.FK_tblVolumeCost_tblMaterial" FromRole="tblMaterial" ToRole="tblVolumeCost" />
+        </EntityType>
+        <EntityType Name="tblMaterialType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MeasureType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblMaterials" Relationship="Self.FK_tblMaterial_tblMaterialType" FromRole="tblMaterialType" ToRole="tblMaterial" />
+          <NavigationProperty Name="tblAreaCosts" Relationship="Self.FK_tblAreaCost_tblMaterialType" FromRole="tblMaterialType" ToRole="tblAreaCost" />
+          <NavigationProperty Name="tblBussinessCosts" Relationship="Self.FK_tblBussinessCost_tblMaterialType" FromRole="tblMaterialType" ToRole="tblBussinessCost" />
+          <NavigationProperty Name="tblConsumables" Relationship="Self.FK_tblConsumables_tblMaterialType" FromRole="tblMaterialType" ToRole="tblConsumables" />
+          <NavigationProperty Name="tblLengthCosts" Relationship="Self.FK_tblLengthCost_tblMaterialType" FromRole="tblMaterialType" ToRole="tblLengthCost" />
+          <NavigationProperty Name="tblVolumeCosts" Relationship="Self.FK_tblVolumeCost_tblMaterialType" FromRole="tblMaterialType" ToRole="tblVolumeCost" />
+        </EntityType>
+        <EntityType Name="tblAreaCost">
+          <Key>
+            <PropertyRef Name="AreatCostID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="AreatCostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalLenght" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="TotalWidth" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="TotalCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PricePerMeterSQ" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalArea" Type="Decimal" Precision="9" Scale="3" />
+          <NavigationProperty Name="tblMaterial" Relationship="Self.FK_tblAreaCost_tblMaterial" FromRole="tblAreaCost" ToRole="tblMaterial" />
+          <NavigationProperty Name="tblMaterialType" Relationship="Self.FK_tblAreaCost_tblMaterialType" FromRole="tblAreaCost" ToRole="tblMaterialType" />
+        </EntityType>
+        <EntityType Name="tblBussinessCost">
+          <Key>
+            <PropertyRef Name="BussinessCostID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="BussinessCostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CostName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RatePerHour" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="tblMaterial" Relationship="Self.FK_tblBussinessCost_tblMaterial" FromRole="tblBussinessCost" ToRole="tblMaterial" />
+          <NavigationProperty Name="tblMaterialType" Relationship="Self.FK_tblBussinessCost_tblMaterialType" FromRole="tblBussinessCost" ToRole="tblMaterialType" />
+        </EntityType>
+        <EntityType Name="tblConsumable">
+          <Key>
+            <PropertyRef Name="ConsumableID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="ConsumableID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="TotalCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PricePerUnit" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="tblMaterial" Relationship="Self.FK_tblConsumables_tblMaterial" FromRole="tblConsumables" ToRole="tblMaterial" />
+          <NavigationProperty Name="tblMaterialType" Relationship="Self.FK_tblConsumables_tblMaterialType" FromRole="tblConsumables" ToRole="tblMaterialType" />
+        </EntityType>
+        <EntityType Name="tblLengthCost">
+          <Key>
+            <PropertyRef Name="LenghtCostID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="LenghtCostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NoPieces" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="LengthPerPiece" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="TotalLength" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="TotalCostPieces" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PricePerMeter" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="tblMaterial" Relationship="Self.FK_tblLengthCost_tblMaterial" FromRole="tblLengthCost" ToRole="tblMaterial" />
+          <NavigationProperty Name="tblMaterialType" Relationship="Self.FK_tblLengthCost_tblMaterialType" FromRole="tblLengthCost" ToRole="tblMaterialType" />
+        </EntityType>
+        <EntityType Name="tblVolumeCost">
+          <Key>
+            <PropertyRef Name="VolumeCostID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="VolumeCostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="MaterialID" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalVolume" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="PricePerLiter" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalCost" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="tblMaterial" Relationship="Self.FK_tblVolumeCost_tblMaterial" FromRole="tblVolumeCost" ToRole="tblMaterial" />
+          <NavigationProperty Name="tblMaterialType" Relationship="Self.FK_tblVolumeCost_tblMaterialType" FromRole="tblVolumeCost" ToRole="tblMaterialType" />
+        </EntityType>
+        <Association Name="FK_tblAreaCost_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblAreaCost" Type="Self.tblAreaCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblAreaCost">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblBussinessCost_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblBussinessCost" Type="Self.tblBussinessCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblBussinessCost">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConsumables_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblConsumables" Type="Self.tblConsumable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblConsumables">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLengthCost_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblLengthCost" Type="Self.tblLengthCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblLengthCost">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblMaterial_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="0..1" />
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblMaterial">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVolumeCost_tblMaterial">
+          <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+          <End Role="tblVolumeCost" Type="Self.tblVolumeCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterial">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="tblVolumeCost">
+              <PropertyRef Name="MaterialID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAreaCost_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblAreaCost" Type="Self.tblAreaCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblAreaCost">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblBussinessCost_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblBussinessCost" Type="Self.tblBussinessCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblBussinessCost">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConsumables_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblConsumables" Type="Self.tblConsumable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblConsumables">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLengthCost_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblLengthCost" Type="Self.tblLengthCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblLengthCost">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVolumeCost_tblMaterialType">
+          <End Role="tblMaterialType" Type="Self.tblMaterialType" Multiplicity="1" />
+          <End Role="tblVolumeCost" Type="Self.tblVolumeCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaterialType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="tblVolumeCost">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbNewEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblMaterials" EntityType="Self.tblMaterial" />
+          <EntitySet Name="tblMaterialTypes" EntityType="Self.tblMaterialType" />
+          <EntitySet Name="tblAreaCosts" EntityType="Self.tblAreaCost" />
+          <EntitySet Name="tblBussinessCosts" EntityType="Self.tblBussinessCost" />
+          <EntitySet Name="tblConsumables" EntityType="Self.tblConsumable" />
+          <EntitySet Name="tblLengthCosts" EntityType="Self.tblLengthCost" />
+          <EntitySet Name="tblVolumeCosts" EntityType="Self.tblVolumeCost" />
+          <AssociationSet Name="FK_tblAreaCost_tblMaterial" Association="Self.FK_tblAreaCost_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterials" />
+            <End Role="tblAreaCost" EntitySet="tblAreaCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblBussinessCost_tblMaterial" Association="Self.FK_tblBussinessCost_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterials" />
+            <End Role="tblBussinessCost" EntitySet="tblBussinessCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConsumables_tblMaterial" Association="Self.FK_tblConsumables_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterials" />
+            <End Role="tblConsumables" EntitySet="tblConsumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLengthCost_tblMaterial" Association="Self.FK_tblLengthCost_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterials" />
+            <End Role="tblLengthCost" EntitySet="tblLengthCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMaterial_tblMaterialType" Association="Self.FK_tblMaterial_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialTypes" />
+            <End Role="tblMaterial" EntitySet="tblMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVolumeCost_tblMaterial" Association="Self.FK_tblVolumeCost_tblMaterial">
+            <End Role="tblMaterial" EntitySet="tblMaterials" />
+            <End Role="tblVolumeCost" EntitySet="tblVolumeCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAreaCost_tblMaterialType" Association="Self.FK_tblAreaCost_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialTypes" />
+            <End Role="tblAreaCost" EntitySet="tblAreaCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblBussinessCost_tblMaterialType" Association="Self.FK_tblBussinessCost_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialTypes" />
+            <End Role="tblBussinessCost" EntitySet="tblBussinessCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConsumables_tblMaterialType" Association="Self.FK_tblConsumables_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialTypes" />
+            <End Role="tblConsumables" EntitySet="tblConsumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLengthCost_tblMaterialType" Association="Self.FK_tblLengthCost_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialTypes" />
+            <End Role="tblLengthCost" EntitySet="tblLengthCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVolumeCost_tblMaterialType" Association="Self.FK_tblVolumeCost_tblMaterialType">
+            <End Role="tblMaterialType" EntitySet="tblMaterialTypes" />
+            <End Role="tblVolumeCost" EntitySet="tblVolumeCosts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbNewModelStoreContainer" CdmEntityContainer="dbNewEntities">
+          <EntitySetMapping Name="tblMaterials">
+            <EntityTypeMapping TypeName="dbNewModel.tblMaterial">
+              <MappingFragment StoreEntitySet="tblMaterial">
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMaterialTypes">
+            <EntityTypeMapping TypeName="dbNewModel.tblMaterialType">
+              <MappingFragment StoreEntitySet="tblMaterialType">
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="MeasureType" ColumnName="MeasureType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAreaCosts">
+            <EntityTypeMapping TypeName="dbNewModel.tblAreaCost">
+              <MappingFragment StoreEntitySet="tblAreaCost">
+                <ScalarProperty Name="AreatCostID" ColumnName="AreatCostID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="TotalLenght" ColumnName="TotalLenght" />
+                <ScalarProperty Name="TotalWidth" ColumnName="TotalWidth" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="PricePerMeterSQ" ColumnName="PricePerMeterSQ" />
+                <ScalarProperty Name="TotalArea" ColumnName="TotalArea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBussinessCosts">
+            <EntityTypeMapping TypeName="dbNewModel.tblBussinessCost">
+              <MappingFragment StoreEntitySet="tblBussinessCost">
+                <ScalarProperty Name="BussinessCostID" ColumnName="BussinessCostID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="CostName" ColumnName="CostName" />
+                <ScalarProperty Name="RatePerHour" ColumnName="RatePerHour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblConsumables">
+            <EntityTypeMapping TypeName="dbNewModel.tblConsumable">
+              <MappingFragment StoreEntitySet="tblConsumables">
+                <ScalarProperty Name="ConsumableID" ColumnName="ConsumableID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="PricePerUnit" ColumnName="PricePerUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLengthCosts">
+            <EntityTypeMapping TypeName="dbNewModel.tblLengthCost">
+              <MappingFragment StoreEntitySet="tblLengthCost">
+                <ScalarProperty Name="LenghtCostID" ColumnName="LenghtCostID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="NoPieces" ColumnName="NoPieces" />
+                <ScalarProperty Name="LengthPerPiece" ColumnName="LengthPerPiece" />
+                <ScalarProperty Name="TotalLength" ColumnName="TotalLength" />
+                <ScalarProperty Name="TotalCostPieces" ColumnName="TotalCostPieces" />
+                <ScalarProperty Name="PricePerMeter" ColumnName="PricePerMeter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVolumeCosts">
+            <EntityTypeMapping TypeName="dbNewModel.tblVolumeCost">
+              <MappingFragment StoreEntitySet="tblVolumeCost">
+                <ScalarProperty Name="VolumeCostID" ColumnName="VolumeCostID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="TotalVolume" ColumnName="TotalVolume" />
+                <ScalarProperty Name="PricePerLiter" ColumnName="PricePerLiter" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

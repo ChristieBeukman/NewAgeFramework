@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aa51819ff6634735a9cb09af1bb5f660" Name="Diagram1">
+        <EntityTypeShape EntityType="dbNewModel.tblMaterial" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbNewModel.tblMaterialType" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbNewModel.tblAreaCost" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbNewModel.tblBussinessCost" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbNewModel.tblConsumable" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbNewModel.tblLengthCost" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbNewModel.tblVolumeCost" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="dbNewModel.FK_tblAreaCost_tblMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblBussinessCost_tblMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblConsumables_tblMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblLengthCost_tblMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblMaterial_tblMaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblVolumeCost_tblMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblAreaCost_tblMaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblBussinessCost_tblMaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblConsumables_tblMaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblLengthCost_tblMaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="dbNewModel.FK_tblVolumeCost_tblMaterialType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
