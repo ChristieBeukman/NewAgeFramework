@@ -4,9 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewAgeFramework"
+        xmlns:vm="clr-namespace:NewAgeFramework.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="350" Width="525" DataContext="{Binding ViewModel}">
+    <Window.Resources>
+        <vm:LengthCostingViewModel x:Key="ViewModel"/>
+    </Window.Resources>
+
+    <Grid >
+        <StackPanel HorizontalAlignment="Left" Width="353">
+            <ComboBox ItemsSource="{Binding JoinedLengthModel, Source={StaticResource ViewModel}}" 
+                      SelectedItem="{Binding SelectedLenghMaterial, Source={StaticResource ViewModel}}"
+                      DisplayMemberPath="Name" SelectedIndex="0"/>
+            <TextBox Text="{Binding SelectedLenghMaterial.MaterialID , Source={StaticResource ViewModel}}" />
+            <TextBox Text="{Binding SelectedLenghMaterial.Description , Source={StaticResource ViewModel}}" />
+            <TextBox Text="{Binding SelectedLenghMaterial.NoPieces , Source={StaticResource ViewModel}}" />
+            <Button/>
+        </StackPanel>
     </Grid>
 </Window>

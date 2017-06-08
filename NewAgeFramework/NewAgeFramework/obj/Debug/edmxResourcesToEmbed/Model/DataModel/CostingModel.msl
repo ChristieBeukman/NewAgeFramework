@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbNewModelStoreContainer" CdmEntityContainer="dbNewEntities">
+    <EntitySetMapping Name="tblMaterials">
+      <EntityTypeMapping TypeName="dbNewModel.tblMaterial">
+        <MappingFragment StoreEntitySet="tblMaterial">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMaterialTypes">
+      <EntityTypeMapping TypeName="dbNewModel.tblMaterialType">
+        <MappingFragment StoreEntitySet="tblMaterialType">
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="MeasureType" ColumnName="MeasureType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAreaCosts">
+      <EntityTypeMapping TypeName="dbNewModel.tblAreaCost">
+        <MappingFragment StoreEntitySet="tblAreaCost">
+          <ScalarProperty Name="AreatCostID" ColumnName="AreatCostID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="TotalLenght" ColumnName="TotalLenght" />
+          <ScalarProperty Name="TotalWidth" ColumnName="TotalWidth" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="PricePerMeterSQ" ColumnName="PricePerMeterSQ" />
+          <ScalarProperty Name="TotalArea" ColumnName="TotalArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBussinessCosts">
+      <EntityTypeMapping TypeName="dbNewModel.tblBussinessCost">
+        <MappingFragment StoreEntitySet="tblBussinessCost">
+          <ScalarProperty Name="BussinessCostID" ColumnName="BussinessCostID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="CostName" ColumnName="CostName" />
+          <ScalarProperty Name="RatePerHour" ColumnName="RatePerHour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblConsumables">
+      <EntityTypeMapping TypeName="dbNewModel.tblConsumable">
+        <MappingFragment StoreEntitySet="tblConsumables">
+          <ScalarProperty Name="ConsumableID" ColumnName="ConsumableID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="PricePerUnit" ColumnName="PricePerUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLengthCosts">
+      <EntityTypeMapping TypeName="dbNewModel.tblLengthCost">
+        <MappingFragment StoreEntitySet="tblLengthCost">
+          <ScalarProperty Name="LenghtCostID" ColumnName="LenghtCostID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="NoPieces" ColumnName="NoPieces" />
+          <ScalarProperty Name="LengthPerPiece" ColumnName="LengthPerPiece" />
+          <ScalarProperty Name="TotalLength" ColumnName="TotalLength" />
+          <ScalarProperty Name="TotalCostPieces" ColumnName="TotalCostPieces" />
+          <ScalarProperty Name="PricePerMeter" ColumnName="PricePerMeter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVolumeCosts">
+      <EntityTypeMapping TypeName="dbNewModel.tblVolumeCost">
+        <MappingFragment StoreEntitySet="tblVolumeCost">
+          <ScalarProperty Name="VolumeCostID" ColumnName="VolumeCostID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="TotalVolume" ColumnName="TotalVolume" />
+          <ScalarProperty Name="PricePerLiter" ColumnName="PricePerLiter" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
